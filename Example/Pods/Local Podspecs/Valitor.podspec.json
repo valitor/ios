@@ -1,0 +1,23 @@
+{
+  "name": "Valitor",
+  "version": "0.1.1",
+  "summary": "Valitor iOS",
+  "description": "Valitor iOS Library to communicate with ValitorPosiTengdur",
+  "homepage": "https://www.Valitor.is",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Ivar": "ivarhuni@stokkur.is"
+  },
+  "source": {
+    "git": "https://bitbucket.org/stokkur/valitorcocoapod.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "public_header_files":"Valitor/Classes/*.h",
+  "source_files": "Valitor/Classes/*.{h,a}"
+}

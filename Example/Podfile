@@ -1,0 +1,4 @@
+use_frameworks!
+target 'Valitor_Tests' do
+  pod 'Valitor', :path => '../'
+end

@@ -1,0 +1,314 @@
+Mock Responses:
+
+Authorization (Sale):
+//Demo Communications
+    //1. REQ:           MsgType=0100&
+    //                  TransAmount=1000&
+    //                  TransactionCurrency=352&
+    //                  PosPrint=0&
+    //                  CardType=0 &
+    //                  Status=0&
+    //                  Rand=921&
+    //                  Check=4853&
+    //                  Version=20&
+    
+    //2. RES:           MsgType=0110&
+    //                  CardNumber=450728******9160&
+    //                  TransAmount=1000&
+    //                  MsgID=000007&
+    //                  TransTime=094741&
+    //                  TransDate=131014&
+    //                  PODSC=510101254340&
+    //                  FuncCode=1552&
+    //                  AcquirerName=VALITOR&
+    //                  TransID=131014000007&
+    //                  AuthCode=123450&
+    //                  ResponseCode=000&
+    //                  TerminalID=20324222&
+    //                  MerchantXID=0000122&
+    //                  MerchantName=VALITOR TEST \Laugarvegur 77\Reykjavik\0000000101REKISL&
+    //                  TransactionCurrency=352&
+    //                  CardName=VISA&
+    //                  StoreTerm=00110087&
+    //                  SoftVers=IPA02660000&
+    //                  Approved=1&
+    //                  ResponseText=HEIMILD&
+    //                  BatchID=0000116&
+    //                  AuthAgt=400&
+    //                  Foreign=0&
+    //                  Receipt=(XXXX)&
+    //                  Check=7410&
+    //
+    //3. REQ(MsgDeliv): MsgType=0800&
+    //                  MsgCode=700&
+    //                  Rand=870&
+    //                  Check=2482&
+    //
+    //4. RES:(MsgDeliv):MsgType=0810&
+    //                  MsgCode=700&
+    //                  Approved=1&
+    //                  Check=2035&
+
+MOTOAuthorization:
+//Demo Communications
+    //Req:              MsgType=0101&
+    //                  TransAmount=1000&
+    //                  TransactionCurrency=352&
+    //                  PosPrint=4&
+    //                  CardType=0&
+    //                  Rand=462&
+    //                  Check=813&
+    //                  Version=20&
+    //                  Status=0&
+    //
+    //Res:              MsgType=0111&
+    //                  CardNumber=450728******9160&
+    //                  TransAmount=1000&
+    //                  MsgID=000008&
+    //                  TransTime=094830&
+    //                  TransDate=131014&
+    //                  PODSC=510130600340&
+    //                  FuncCode=1508&
+    //                  AcquirerName=VALITOR&
+    //                  TransID=131014000008&
+    //                  AuthCode=123450&
+    //                  ResponseCode=000&
+    //                  TerminalID=20324222&
+    //                  MerchantXID=0000122&
+    //                  MerchantName=VALITOR TEST \Laugarvegur 77\Reykjavik\0000000101REKISL&
+    //                  TransactionCurrency=352&
+    //                  CardName=VISA&
+    //                  StoreTerm=00110087&
+    //                  SoftVers=IPA02660000&
+    //                  Approved=1&
+    //                  ResponseText=HEIMILD&
+    //                  BatchID=0000116&
+    //                  AuthAgt=400&
+    //                  Foreign=0&
+    //                  Receipt=(XXXX)&
+    //                  Check=366&
+    //
+    //3. REQ(MsgDeliv): MsgType=0800&
+    //                  MsgCode=700&
+    //                  Rand=870&
+    //                  Check=2482&
+    //
+    //4. RES:(MsgDeliv):MsgType=0810&
+    //                  MsgCode=700&
+    //                  Approved=1&
+    //                  Check=2035&
+AuthorizationONLY:
+//Demo Communications:
+    //Req:  MsgType=0102&
+    //      TransAmount=200&
+    //      TransactionCurrency=352&
+    //      PosPrint=4&
+    //      CardType=0&
+    //      Rand=448&
+    //      Check=4921&
+    //      Version=20&
+    //      Status=0&
+    //
+    //Res:  MsgType=0112&
+    //      CardNumber=450728******9160&
+    //      TransAmount=200&
+    //      MsgID=000008&
+    //      TransTime=094946&
+    //      TransDate=131014&
+    //      PODSC=510101254340&
+    //      FuncCode=1508&
+    //      AcquirerName=VALITOR&
+    //      TransID=131014000008&
+    //      AuthCode=123450&
+    //      ResponseCode=000&
+    //      TerminalID=20324222&
+    //      MerchantXID=0000122&
+    //      MerchantName=VALITOR TEST \Laugarvegur 77\Reykjavik\0000000101REKISL&
+    //      TransactionCurrency=352&
+    //      CardName=VISA&
+    //      StoreTerm=00110087&
+    //      SoftVers=IPA02660000&
+    //      Approved=1&
+    //      ResponseText=HEIMILD&
+    //      BatchID=0000116&
+    //      AuthAgt=400&
+    //      Foreign=0&
+    //      Check=8121&
+    //
+    //
+    //NOTE: Message Delivered String _NOT_ used here!!
+VoiceAuthorization:
+//Demo Comms:
+    //Req:              MsgType=0103&
+    //                  TransAmount=300&
+    //                  TransactionCurrency=352&
+    //                  PosPrint=4&
+    //                  CardType=0&
+    //                  Rand=594&
+    //                  Check=927&
+    //                  Version=20&
+    //                  Status=0&
+    //
+    //Res:              MsgType=0113&
+    //                  CardNumber=450728******9160&
+    //                  TransAmount=300&MsgID=000009&
+    //                  TransTime=095046&
+    //                  TransDate=131014&
+    //                  PODSC=510110600340&
+    //                  FuncCode=1509&
+    //                  AcquirerName=VALITOR&
+    //                  TransID=131014000009&
+    //                  AuthCode=123456&
+    //                  ResponseCode=008&
+    //                  TerminalID=20324222&
+    //                  MerchantXID=0000122&
+    //                  MerchantName=VALITOR TEST \Laugarvegur 77\Reykjavik\0000000101REKISL&
+    //                  TransactionCurrency=352&
+    //                  CardName=VISA&
+    //                  StoreTerm=00110087&
+    //                  SoftVers=IPA02660000&
+    //                  Approved=1&
+    //                  ResponseText=HEIMILD&
+    //                  BatchID=0000116&
+    //                  AuthAgt=400&
+    //                  Foreign=0&
+    //                  Receipt=(XXXX)&
+    //                  Check=4127&
+    //
+    //3. REQ(MsgDeliv): MsgType=0800&
+    //                  MsgCode=700&
+    //                  Rand=870&
+    //                  Check=2482&
+    //
+    //4. RES:(MsgDeliv):MsgType=0810&
+    //                  MsgCode=700&
+    //                  Approved=1&
+    //                  Check=2035&
+
+Refund:
+//Demo Comms
+    //
+    //REQ:              MsgType=0200&
+    //                  TransAmount=3300&
+    //                  TransactionCurrency=352&
+    //                  PosPrint=4&
+    //                  CardType=0&
+    //                  Rand=959&
+    //                  Check=457&
+    //                  Version=20&
+    //                  Status=0&
+    //
+    //RES:              MsgType=0210&
+    //                  CardNumber=450728******9160&
+    //                  TransAmount=3300&
+    //                  MsgID=000010&
+    //                  TransTime=095357&
+    //                  TransDate=131014&
+    //                  PODSC=510101200340&
+    //                  FuncCode=1004&
+    //                  AcquirerName=VALITOR&
+    //                  TransID=131014000010&
+    //                  AuthCode=000010&
+    //                  ResponseCode=000&
+    //                  TerminalID=20324222&
+    //                  MerchantXID=0000122&
+    //                  MerchantName=VALITOR TEST \Laugarvegur 77\Reykjavik\0000000101REKISL&
+    //                  TransactionCurrency=352&
+    //                  CardName=VISA&
+    //                  StoreTerm=00110087&
+    //                  SoftVers=IPA02660000&
+    //                  Approved=1&
+    //                  ResponseText=HEIMILD&
+    //                  BatchID=0000116&
+    //                  AuthAgt=400&
+    //                  Foreign=0&
+    //                  Receipt=(XXXX)&
+    //                  Check=10&
+    //
+    //3. REQ(MsgDeliv): MsgType=0800&
+    //                  MsgCode=700&
+    //                  Rand=870&
+    //                  Check=2482&
+    //
+    //4. RES:(MsgDeliv):MsgType=0810&
+    //                  MsgCode=700&
+    //                  Approved=1&
+    //                  Check=2035&
+
+Reversal: 
+//Demo Comms: MsgType=0400&
+    //REQ:              TransAmount=1000&
+    //                  TransactionCurrency=352&
+    //                  PosPrint=4&
+    //                  CardNumberShort=9160&
+    //                  TransAmount=1000&
+    //                  MsgID=8&
+    //                  CardType=0&
+    //                  Rand=794&
+    //                  Check=3327&
+    //                  Version=20&
+    //                  Status=0&
+    //
+    //RES:              MsgType=0410&
+    //                  OrigMsgID=000008&
+    //                  OrigTranType=ÓGILDING&
+    //                  CardNumber=450728******9160&
+    //                  TransAmount=1000&
+    //                  MsgID=000012&
+    //                  TransTime=095810&
+    //                  TransDate=131014&
+    //                  PODSC=510110600340&
+    //                  FuncCode=1004&
+    //                  AcquirerName=VALITOR&
+    //                  TransID=131014000008&
+    //                  AuthCode=000012&
+    //                  ResponseCode=000&
+    //                  TerminalID=20324222&
+    //                  MerchantXID= 0000122&
+    //                  MerchantName=VALITOR TEST \Laugarvegur 77\Reykjavik\0000000101REKISL&
+    //                  TransactionCurrency=352&
+    //                  CardName=VISA&
+    //                  StoreTerm=00110087&
+    //                  SoftVers=IPA02660000&
+    //                  Approved=1&
+    //                  ResponseText=HEIMILD&
+    //                  BatchID=0000116&
+    //                  AuthAgt=400&
+    //                  Receipt=(XXXX)&
+    //                  Check=5884&
+    //
+    ////3. REQ(MsgDeliv):   MsgType=0800&
+    //                      MsgCode=700&
+    //                      Rand=870&
+    //                      Check=2482&
+    //
+    //4. RES:(MsgDeliv):    MsgType=0810&
+    //                      MsgCode=700&
+    //                      Approved=1&
+    //                      Check=2035&
+
+Batch Sending:
+//Demo Comms: MsgType=0800, _NO MESSAGE DELIVERED_
+    //REQ:
+    //                  MsgType=0800&
+    //                  MsgCode=100&
+    //                  PosPrint=1&
+    //                  Rand=879&
+    //                  Check=4352&
+    //                  Status=0&
+    //                  Version=20&
+
+    //RES:
+    //                  MsgType=0810&
+    //                  MsgCode=100&
+    //                  MerchantID=000012209256684&
+    //BatchID=0000987&
+    //StoreTerm=00210042&
+    //TransTime=100447&
+    //TransDate=131014&
+    //ResponseText=Good file: Received pcs: 16, amount: 555000& MerchantName= VALITOR TEST \Laugarvegur
+    //77\Reykjavik\0000000101REKISL&
+    //TotalList=
+    //Visa/sala/0004/4000/Visa/endurgreiðsla/0001/3300// Visa electron/sala/0002/17200/Visa electron/Ógilding/0001/8500// Mastercard/endurgreiðsla/0002/11900// AMEX/endurgreiðsla/0002/552500// Samtals/sala/0006/21200/ Samtals/endurgreiðsla/0005/567700/ Samtals/Ógilding/0001/8500/
+    //Samtals/Ógild endurgreiðsla/0000//
+    //Samtals/samtals/0012/-555000//& Check=3905&Approved=1&

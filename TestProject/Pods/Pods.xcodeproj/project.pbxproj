@@ -1,0 +1,529 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		09F6AD7059888F050DB53076E5689269 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 982BB1DCF3CF976149E63DE929B6C668 /* CFNetwork.framework */; };
+		16BD1E872A576E8454844DAA0B5C766F /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF5FC8731C891F3099F1954753724779 /* CoreBluetooth.framework */; };
+		1DBD8FFDBF2C783DF9805ED2F95AD91A /* Valitor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AAE39BD932B823D446258BADA7D5D84 /* Valitor-dummy.m */; };
+		258DCEC871830F391283FD614684899A /* Constants.h in Headers */ = {isa = PBXBuildFile; fileRef = 21FCBECE2B47866A133621AA3AF4D1E9 /* Constants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2CC0D0364220B2E88D773490D03D5D26 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13B486DED9BDDBFC67B50968BBEC8F3D /* UIKit.framework */; };
+		3290294CB6CB5034B440800AAB13CA0D /* VALCard.h in Headers */ = {isa = PBXBuildFile; fileRef = F0008AAEC49090E24BC7C1AB87507163 /* VALCard.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37F4C716FE3381840939D1A32F8369B7 /* TcpServer.h in Headers */ = {isa = PBXBuildFile; fileRef = CE825D4AC262A5F7372F73F2171F1002 /* TcpServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A27390FD98C2BFBDB2AB924A1D4BF97 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9416C4AE3DF94DCC3BCE71A0DC0CF53 /* ExternalAccessory.framework */; };
+		475E7B0DE6A936C2EE2A078EE55E7D86 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBB34F1BE24484C7F24CAABD8FB4F2B0 /* SystemConfiguration.framework */; };
+		5067623D1FD449D8AA188B68FD75CBA3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66F782D98552792388F3517DC79DE76E /* Foundation.framework */; };
+		50CC2EC22154EF127CD2D0DEB77B6E37 /* communicationThread.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B47135591D4ABBB88FC48CFAEB8E082 /* communicationThread.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		55FAA26384EC61BB5198648155C6C51A /* Pods-TestProject-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2C945BE4AFC76C6428E5254EA77295 /* Pods-TestProject-dummy.m */; };
+		5D15DF7F3C5B06571D66FD6698FD34E3 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3C921DE819BA73D482ACD67E7D6350F /* CoreAudio.framework */; };
+		63E6D7B30F615E2318693A0402FE70A7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD558D95976FCAD59B1F9CAF9EF6F827 /* AudioToolbox.framework */; };
+		655826682241AE919A914CDD9A8C664A /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C098B25C3A7F5D1FC3C36626AE86050 /* MessageUI.framework */; };
+		660204022CFB5477EE9B00D3418A4925 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A5D3DF2C8EE8DCC96D656C60FAECDC /* Security.framework */; };
+		813DFEAE677DD3FAE9AFBA05F8D3FF75 /* VALRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = E2B049E608639446806500A300DFE4EE /* VALRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ACB23A223025D00FE02CD9EF5D8BCF20 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66F782D98552792388F3517DC79DE76E /* Foundation.framework */; };
+		AFD0639B9C0C6DABDDC3DCBE8FD0410E /* CommunicationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C8BF8101FA889A2CA560668FAAACE070 /* CommunicationManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CAE5EBA7B214B8B64E7C12BF12B10BF2 /* VALAmount.h in Headers */ = {isa = PBXBuildFile; fileRef = A273440A2011A3850C76A6F08B02758D /* VALAmount.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5E7A844424B49D80F7C451AD22CBC93 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2F85629E337FA5BF2BADACB34B6BA9A /* AVFoundation.framework */; };
+		E31087A01C1B4AE29B11D3C6C171FB89 /* Valitor.a in Sources */ = {isa = PBXBuildFile; fileRef = 3B7742F794162BF16749D93128834C82 /* Valitor.a */; };
+		E8D7DD41424D1A646FA853A37DB72263 /* VALBaseClass.h in Headers */ = {isa = PBXBuildFile; fileRef = A33806A7B8F99098437ED3C4BCEA33FE /* VALBaseClass.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FC3A7C2EDFC496FE62A7986387783F09 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A2084EC7FC3784E852ED3A155986F2 /* CoreGraphics.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		642F6980AFF63935C30D91DA4D5B1C08 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 085FEF39D1C42FC85DB7CAE85136685C;
+			remoteInfo = Valitor;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		13B486DED9BDDBFC67B50968BBEC8F3D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		198DFD4F5963A4917F56CDC505B5E126 /* Pods-TestProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TestProject.debug.xcconfig"; sourceTree = "<group>"; };
+		1CB89E07330488107D70B33EEAEACA56 /* Valitor-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Valitor-prefix.pch"; sourceTree = "<group>"; };
+		21FCBECE2B47866A133621AA3AF4D1E9 /* Constants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Valitor/Classes/Constants.h; sourceTree = "<group>"; };
+		3B7742F794162BF16749D93128834C82 /* Valitor.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = Valitor.a; path = Valitor/Classes/Valitor.a; sourceTree = "<group>"; };
+		3D3F95659FE4B4472BDA961E446BF5FD /* libPods-TestProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		51E2B33E83A32C833A1AE1501531511C /* Pods-TestProject-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TestProject-frameworks.sh"; sourceTree = "<group>"; };
+		5785F57E84669EC21A72C5E2C26B7948 /* Valitor.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Valitor.xcconfig; sourceTree = "<group>"; };
+		5AAE39BD932B823D446258BADA7D5D84 /* Valitor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Valitor-dummy.m"; sourceTree = "<group>"; };
+		66F782D98552792388F3517DC79DE76E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		892C3812343EB45AF88149B185985A65 /* Pods-TestProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TestProject.release.xcconfig"; sourceTree = "<group>"; };
+		8C2C945BE4AFC76C6428E5254EA77295 /* Pods-TestProject-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TestProject-dummy.m"; sourceTree = "<group>"; };
+		8C9CCEEC5C751D101B7E07BA09112410 /* Pods-TestProject-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TestProject-acknowledgements.markdown"; sourceTree = "<group>"; };
+		92A5D3DF2C8EE8DCC96D656C60FAECDC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		95D0DE1EE64AB29327BE00BA289E2DC6 /* libValitor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libValitor.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		982BB1DCF3CF976149E63DE929B6C668 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
+		9B47135591D4ABBB88FC48CFAEB8E082 /* communicationThread.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = communicationThread.h; path = Valitor/Classes/communicationThread.h; sourceTree = "<group>"; };
+		9C098B25C3A7F5D1FC3C36626AE86050 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/MessageUI.framework; sourceTree = DEVELOPER_DIR; };
+		A273440A2011A3850C76A6F08B02758D /* VALAmount.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VALAmount.h; path = Valitor/Classes/VALAmount.h; sourceTree = "<group>"; };
+		A33806A7B8F99098437ED3C4BCEA33FE /* VALBaseClass.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VALBaseClass.h; path = Valitor/Classes/VALBaseClass.h; sourceTree = "<group>"; };
+		AE6DB8911754A6B54D231AC960FE49F2 /* Pods-TestProject-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TestProject-acknowledgements.plist"; sourceTree = "<group>"; };
+		B9416C4AE3DF94DCC3BCE71A0DC0CF53 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/ExternalAccessory.framework; sourceTree = DEVELOPER_DIR; };
+		C3C921DE819BA73D482ACD67E7D6350F /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreAudio.framework; sourceTree = DEVELOPER_DIR; };
+		C6A2084EC7FC3784E852ED3A155986F2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		C8BF8101FA889A2CA560668FAAACE070 /* CommunicationManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CommunicationManager.h; path = Valitor/Classes/CommunicationManager.h; sourceTree = "<group>"; };
+		CE825D4AC262A5F7372F73F2171F1002 /* TcpServer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TcpServer.h; path = Valitor/Classes/TcpServer.h; sourceTree = "<group>"; };
+		DBB34F1BE24484C7F24CAABD8FB4F2B0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		DD558D95976FCAD59B1F9CAF9EF6F827 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		E2B049E608639446806500A300DFE4EE /* VALRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VALRequest.h; path = Valitor/Classes/VALRequest.h; sourceTree = "<group>"; };
+		E2F85629E337FA5BF2BADACB34B6BA9A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		E53D56DF894AED04B75EA4217047348D /* Pods-TestProject-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TestProject-resources.sh"; sourceTree = "<group>"; };
+		F0008AAEC49090E24BC7C1AB87507163 /* VALCard.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VALCard.h; path = Valitor/Classes/VALCard.h; sourceTree = "<group>"; };
+		FF5FC8731C891F3099F1954753724779 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreBluetooth.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		974D2B3FAAEE4DF3A42CAEF43C1C853F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63E6D7B30F615E2318693A0402FE70A7 /* AudioToolbox.framework in Frameworks */,
+				D5E7A844424B49D80F7C451AD22CBC93 /* AVFoundation.framework in Frameworks */,
+				09F6AD7059888F050DB53076E5689269 /* CFNetwork.framework in Frameworks */,
+				5D15DF7F3C5B06571D66FD6698FD34E3 /* CoreAudio.framework in Frameworks */,
+				16BD1E872A576E8454844DAA0B5C766F /* CoreBluetooth.framework in Frameworks */,
+				FC3A7C2EDFC496FE62A7986387783F09 /* CoreGraphics.framework in Frameworks */,
+				3A27390FD98C2BFBDB2AB924A1D4BF97 /* ExternalAccessory.framework in Frameworks */,
+				ACB23A223025D00FE02CD9EF5D8BCF20 /* Foundation.framework in Frameworks */,
+				655826682241AE919A914CDD9A8C664A /* MessageUI.framework in Frameworks */,
+				660204022CFB5477EE9B00D3418A4925 /* Security.framework in Frameworks */,
+				475E7B0DE6A936C2EE2A078EE55E7D86 /* SystemConfiguration.framework in Frameworks */,
+				2CC0D0364220B2E88D773490D03D5D26 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1E7F88346E6BC2EE54A961959E30C3D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5067623D1FD449D8AA188B68FD75CBA3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		68DC5CC461B60968215FAC2CDAEA76AE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9F35959132CFB4E8555B3ADE6BDBDA3C /* Valitor */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6C61B79F4876C7F3FDBF4D19723DF865 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				70E3240508E673D44ADE0FF9DC91C27B /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		70E3240508E673D44ADE0FF9DC91C27B /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				DD558D95976FCAD59B1F9CAF9EF6F827 /* AudioToolbox.framework */,
+				E2F85629E337FA5BF2BADACB34B6BA9A /* AVFoundation.framework */,
+				982BB1DCF3CF976149E63DE929B6C668 /* CFNetwork.framework */,
+				C3C921DE819BA73D482ACD67E7D6350F /* CoreAudio.framework */,
+				FF5FC8731C891F3099F1954753724779 /* CoreBluetooth.framework */,
+				C6A2084EC7FC3784E852ED3A155986F2 /* CoreGraphics.framework */,
+				B9416C4AE3DF94DCC3BCE71A0DC0CF53 /* ExternalAccessory.framework */,
+				66F782D98552792388F3517DC79DE76E /* Foundation.framework */,
+				9C098B25C3A7F5D1FC3C36626AE86050 /* MessageUI.framework */,
+				92A5D3DF2C8EE8DCC96D656C60FAECDC /* Security.framework */,
+				DBB34F1BE24484C7F24CAABD8FB4F2B0 /* SystemConfiguration.framework */,
+				13B486DED9BDDBFC67B50968BBEC8F3D /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				6C61B79F4876C7F3FDBF4D19723DF865 /* Frameworks */,
+				68DC5CC461B60968215FAC2CDAEA76AE /* Pods */,
+				8C7AA2D1A3C04F724D5E2204D12D47DC /* Products */,
+				B62645A45D7740C52C6994D1E2B71C1A /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		86D19762730A4410809F4EBA4F9AA945 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5785F57E84669EC21A72C5E2C26B7948 /* Valitor.xcconfig */,
+				5AAE39BD932B823D446258BADA7D5D84 /* Valitor-dummy.m */,
+				1CB89E07330488107D70B33EEAEACA56 /* Valitor-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Valitor";
+			sourceTree = "<group>";
+		};
+		8C7AA2D1A3C04F724D5E2204D12D47DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3D3F95659FE4B4472BDA961E446BF5FD /* libPods-TestProject.a */,
+				95D0DE1EE64AB29327BE00BA289E2DC6 /* libValitor.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9F35959132CFB4E8555B3ADE6BDBDA3C /* Valitor */ = {
+			isa = PBXGroup;
+			children = (
+				C8BF8101FA889A2CA560668FAAACE070 /* CommunicationManager.h */,
+				9B47135591D4ABBB88FC48CFAEB8E082 /* communicationThread.h */,
+				21FCBECE2B47866A133621AA3AF4D1E9 /* Constants.h */,
+				CE825D4AC262A5F7372F73F2171F1002 /* TcpServer.h */,
+				A273440A2011A3850C76A6F08B02758D /* VALAmount.h */,
+				A33806A7B8F99098437ED3C4BCEA33FE /* VALBaseClass.h */,
+				F0008AAEC49090E24BC7C1AB87507163 /* VALCard.h */,
+				3B7742F794162BF16749D93128834C82 /* Valitor.a */,
+				E2B049E608639446806500A300DFE4EE /* VALRequest.h */,
+				86D19762730A4410809F4EBA4F9AA945 /* Support Files */,
+			);
+			path = Valitor;
+			sourceTree = "<group>";
+		};
+		B62645A45D7740C52C6994D1E2B71C1A /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				BD09240E9869BF7F7EF86B6E565A1D49 /* Pods-TestProject */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		BD09240E9869BF7F7EF86B6E565A1D49 /* Pods-TestProject */ = {
+			isa = PBXGroup;
+			children = (
+				8C9CCEEC5C751D101B7E07BA09112410 /* Pods-TestProject-acknowledgements.markdown */,
+				AE6DB8911754A6B54D231AC960FE49F2 /* Pods-TestProject-acknowledgements.plist */,
+				8C2C945BE4AFC76C6428E5254EA77295 /* Pods-TestProject-dummy.m */,
+				51E2B33E83A32C833A1AE1501531511C /* Pods-TestProject-frameworks.sh */,
+				E53D56DF894AED04B75EA4217047348D /* Pods-TestProject-resources.sh */,
+				198DFD4F5963A4917F56CDC505B5E126 /* Pods-TestProject.debug.xcconfig */,
+				892C3812343EB45AF88149B185985A65 /* Pods-TestProject.release.xcconfig */,
+			);
+			name = "Pods-TestProject";
+			path = "Target Support Files/Pods-TestProject";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2295BAE1EC42E6F8F95A6E423A077558 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFD0639B9C0C6DABDDC3DCBE8FD0410E /* CommunicationManager.h in Headers */,
+				50CC2EC22154EF127CD2D0DEB77B6E37 /* communicationThread.h in Headers */,
+				258DCEC871830F391283FD614684899A /* Constants.h in Headers */,
+				37F4C716FE3381840939D1A32F8369B7 /* TcpServer.h in Headers */,
+				CAE5EBA7B214B8B64E7C12BF12B10BF2 /* VALAmount.h in Headers */,
+				E8D7DD41424D1A646FA853A37DB72263 /* VALBaseClass.h in Headers */,
+				3290294CB6CB5034B440800AAB13CA0D /* VALCard.h in Headers */,
+				813DFEAE677DD3FAE9AFBA05F8D3FF75 /* VALRequest.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		085FEF39D1C42FC85DB7CAE85136685C /* Valitor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C45DD9B84F938ED7A80CF04883C58B8 /* Build configuration list for PBXNativeTarget "Valitor" */;
+			buildPhases = (
+				058FE4468D7118EB56D7833508677D5A /* Sources */,
+				974D2B3FAAEE4DF3A42CAEF43C1C853F /* Frameworks */,
+				2295BAE1EC42E6F8F95A6E423A077558 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Valitor;
+			productName = Valitor;
+			productReference = 95D0DE1EE64AB29327BE00BA289E2DC6 /* libValitor.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		7DF90AD1E49DFA612807FD8E885934EA /* Pods-TestProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04CF1D1CCB843DB16B7B0897B085488C /* Build configuration list for PBXNativeTarget "Pods-TestProject" */;
+			buildPhases = (
+				2020BA046CC0D6208EF07663BEE735C7 /* Sources */,
+				E1E7F88346E6BC2EE54A961959E30C3D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DBA1EC83314048BEEA74428C96B20A4F /* PBXTargetDependency */,
+			);
+			name = "Pods-TestProject";
+			productName = "Pods-TestProject";
+			productReference = 3D3F95659FE4B4472BDA961E446BF5FD /* libPods-TestProject.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 8C7AA2D1A3C04F724D5E2204D12D47DC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7DF90AD1E49DFA612807FD8E885934EA /* Pods-TestProject */,
+				085FEF39D1C42FC85DB7CAE85136685C /* Valitor */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		058FE4468D7118EB56D7833508677D5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DBD8FFDBF2C783DF9805ED2F95AD91A /* Valitor-dummy.m in Sources */,
+				E31087A01C1B4AE29B11D3C6C171FB89 /* Valitor.a in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2020BA046CC0D6208EF07663BEE735C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55FAA26384EC61BB5198648155C6C51A /* Pods-TestProject-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DBA1EC83314048BEEA74428C96B20A4F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Valitor;
+			target = 085FEF39D1C42FC85DB7CAE85136685C /* Valitor */;
+			targetProxy = 642F6980AFF63935C30D91DA4D5B1C08 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1953EF48B99F549F5FDC54270C14ABDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 198DFD4F5963A4917F56CDC505B5E126 /* Pods-TestProject.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		47BEF9D903506B003EA5C2B249729489 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		6070FF57D0DA795B52FFADCC9DA8C133 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 892C3812343EB45AF88149B185985A65 /* Pods-TestProject.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		AAF678CED40D3499169D10F63CA0719E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C6C1F00EB8B730790981800DC75A7B9F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5785F57E84669EC21A72C5E2C26B7948 /* Valitor.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Valitor/Valitor-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		E9617B5935CE609247F3F987FF5D5AE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5785F57E84669EC21A72C5E2C26B7948 /* Valitor.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Valitor/Valitor-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04CF1D1CCB843DB16B7B0897B085488C /* Build configuration list for PBXNativeTarget "Pods-TestProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1953EF48B99F549F5FDC54270C14ABDD /* Debug */,
+				6070FF57D0DA795B52FFADCC9DA8C133 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0C45DD9B84F938ED7A80CF04883C58B8 /* Build configuration list for PBXNativeTarget "Valitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6C1F00EB8B730790981800DC75A7B9F /* Debug */,
+				E9617B5935CE609247F3F987FF5D5AE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47BEF9D903506B003EA5C2B249729489 /* Debug */,
+				AAF678CED40D3499169D10F63CA0719E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

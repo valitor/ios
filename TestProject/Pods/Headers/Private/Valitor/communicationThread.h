@@ -1,0 +1,1 @@
+../../../Valitor/Valitor/Classes/communicationThread.h

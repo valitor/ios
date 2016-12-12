@@ -1,0 +1,21 @@
+PODS:
+  - Valitor (0.1.2)
+
+DEPENDENCIES:
+  - Valitor (from `https://bitbucket.org/stokkur/valitorcocoapod.git`)
+
+EXTERNAL SOURCES:
+  Valitor:
+    :git: https://bitbucket.org/stokkur/valitorcocoapod.git
+
+CHECKOUT OPTIONS:
+  Valitor:
+    :commit: f5af207764a4abb034aa4c31f60b23c777911054
+    :git: https://bitbucket.org/stokkur/valitorcocoapod.git
+
+SPEC CHECKSUMS:
+  Valitor: c105ea98eb28934e758b16237274f1a216fc8de7
+
+PODFILE CHECKSUM: 9379cbda80d843a68b296dce712db41006b50c43
+
+COCOAPODS: 1.0.1

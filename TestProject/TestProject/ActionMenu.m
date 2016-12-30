@@ -13,7 +13,7 @@
 #import "MYUtls.h"
 
 
-@interface ActionMenu () <UITextFieldDelegate>
+@interface ActionMenu () <UITextFieldDelegate, BarrcodeDelegate>
 
 //Framework
 @property (nonatomic, strong) TcpServer *tcpServer;
@@ -90,6 +90,21 @@
     _lblSelectedAction.text = @"Valin Aðgerð: Send Ping";
     _arrConsole = [NSMutableArray new];
     [self startConsoleUpdates];
+    CommunicationManager *manager = [CommunicationManager manager];
+    manager.delegate = self;
+}
+
+-(void)didReceiveScanData:(NSString *)data{
+    
+    NSLog(@"Data received from scanner: %@", data);
+}
+- (IBAction)scanOnPressed:(id)sender {
+    
+    [[CommunicationManager manager] startScan];
+}
+- (IBAction)scanOffPressed:(id)sender {
+    
+    [[CommunicationManager manager] stopScan];
 }
 
 -(void)startConsoleUpdates{

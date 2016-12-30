@@ -5,15 +5,32 @@
 //  Created by Jan Plesek on 03/05/16.
 //  Copyright Â© 2016 Stokkur s.r.o. All rights reserved.
 //
- 
+
 
 #import <Foundation/Foundation.h>
 #import "VALAmount.h"
 #import "VALCard.h"
 #import "VALRequest.h"
+#import <iSMP/iSMP.h>
+
+@protocol BarrcodeDelegate <NSObject>
+@optional
+//barrcode data is given as NSString through this delegate method
+-(void)didReceiveScanData:(NSString *)data;
+@end
 
 
-@interface CommunicationManager : NSObject
+@interface CommunicationManager : NSObject{
+}
+
+#pragma mark - Scanner
+//Scanner reads barrcodes
+//And
+@property (nonatomic, assign) id <BarrcodeDelegate> delegate;
+//Starts the barrcode scanner
+-(void)startScan;
+//Stops the barrcode scanner
+-(void)stopScan;
 
 #pragma mark - Macros for requests sending types
 typedef enum : NSUInteger{

@@ -22,16 +22,16 @@ The following steps can be taken to reproduce the environment in the test projec
 
 1. Copy all contents of Test/Library into your application. Make sure to mark 'Copy files if needed' and make sure that the files are added to your project's target.
 The files needed for the library are:
-Constants.h
-CommunicationManager.h/m
-communicationThread.h/m
-iSMP.framework
-TcpServer.h/m
-VALAmount.h/m
-Valitor.a
-VALBaseClass.h (implementation file kept hidden in Valitor.a)
-VALCard.h/m
-VALRequest.h/m
+Constants.h  
+CommunicationManager.h/m  
+communicationThread.h/m  
+iSMP.framework  
+TcpServer.h/m  
+VALAmount.h/m  
+Valitor.a  
+VALBaseClass.h (implementation file kept hidden in Valitor.a)  
+VALCard.h/m  
+VALRequest.h/m  
 
 
 2. Add the following to your Info.plist:  

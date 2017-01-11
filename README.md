@@ -25,6 +25,20 @@ Test/ViewControllers/ActionMenu viewcontroller demonstrates how to connect to th
 		&nbsp;&nbsp;\<string\>com.ingenico.easypayemv.spm-sppchannel\</string\>  
 	&nbsp;\</array\>  
 
+3. Make sure that the iSMP framework provided in Test/Library is added to the 'Link Binary With Libraries' in your target's Build Phases tab
+
+4. Add the following system frameworks to your project:
+SystemConfiguration.framework,
+Foundation.framework,
+UIKit.framework,
+CFNetwork.framework,
+ExternalAccessory.framework,
+CoreGraphics.framework
+
+5. Your 'Link Binary With Libraries' section should look something like this:
+![Alt text](http://i.imgur.com/ZM6K6Pt.png "Optional title attribute")
+
+
 ## Author
 
 Ívar Húni Jóhannesson

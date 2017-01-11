@@ -63,7 +63,7 @@ CoreGraphics.framework
 
 7. Add
 
--ObjC
+-ObjC  
 -all_load
 
 to Target -> Build Settings -> Linking -> Other Linker Flags

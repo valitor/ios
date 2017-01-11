@@ -10,9 +10,9 @@ Check out the example app for code examples. The Test/ViewControllers/CompanionS
 Test/ViewControllers/ActionMenu viewcontroller demonstrates how to connect to the POS device on TCP level and send messages to it through Bluetooth+TCP.
 
 ## PreReqs
-iOS Device
-Ingenico POS Device running the Valitor Posi Tengdur application
-Pairing of the iOS Device and Ingenico POS Device through the settings app.
+iOS Device  
+Ingenico POS Device running the Valitor Posi Tengdur application  
+Pairing of the iOS Device and Ingenico POS Device through the settings app.  
 
 ## Installation
 

@@ -11,6 +11,10 @@ Test/ViewControllers/ActionMenu viewcontroller demonstrates how to connect to th
 
 ## Installation
 
+The example application, Test.xcodeproj, is set up and ready to use for XCode 8.1. It contains sample code on how to use and is strongly recommended as a guide to the library.
+
+The following steps can be taken to reproduce the environment in the test project:
+
 1. Copy all contents of Test/Library into your application. Make sure to mark 'Copy files if needed' and make sure that the files are added to your project's target.
 The files needed for the library are:
 Constants.h
@@ -59,7 +63,7 @@ CoreGraphics.framework
 
 to Target -> Build Settings -> Linking -> Other Linker Flags
 
-![Alt text](http://i.imgur.com/ZM6K6Pt.png "Optional title attribute")
+![Alt text](http://i.imgur.com/ew0bGft.png "Optional title attribute")
 
 
 ## Author

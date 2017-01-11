@@ -1,4 +1,4 @@
-## Synopsis
+## Introduction
 
 This is the GitHub repo for the Valitor Posi Tengdur iOS library. This repo contains a library to communicate with Valitor configured Ingenico applications, along with an example app that demonstrates the usage of the library.
 
@@ -13,7 +13,17 @@ Test/ViewControllers/ActionMenu viewcontroller demonstrates how to connect to th
 
 1. Copy all contents of Test/Library into your application. Make sure to mark 'Cope files if needed' and make sure that the files are added to your project's target.
 
-2. 
+2. Add the following to your Info.plist:
+<key>UISupportedExternalAccessoryProtocols</key>
+	<array>
+		<string>com.ingenico.easypayemv.printer</string>
+		<string>com.ingenico.easypayemv.spm-pppchannel</string>
+		<string>com.ingenico.easypayemv.barcodereader</string>
+		<string>com.ingenico.easypayemv.spm-transaction</string>
+		<string>com.ingenico.easypayemv.spm-configuration</string>
+		<string>com.ingenico.easypayemv.spm-networkaccess</string>
+		<string>com.ingenico.easypayemv.spm-sppchannel</string>
+	</array>
 
 ## Author
 

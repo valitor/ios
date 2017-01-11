@@ -15,15 +15,15 @@ Test/ViewControllers/ActionMenu viewcontroller demonstrates how to connect to th
 
 2. Add the following to your Info.plist:  
 \<key\>UISupportedExternalAccessoryProtocols\</key\>  
-	\<array\>  
-		\<string>com.ingenico.easypayemv.printer\</string\>  
-		\<string\>com.ingenico.easypayemv.spm-pppchannel\</string\>  
-		\<string\>com.ingenico.easypayemv.barcodereader\</string\>  
-		\<string\>com.ingenico.easypayemv.spm-transaction\</string\>  
-		\<string\>com.ingenico.easypayemv.spm-configuration\</string\>  
-		\<string\>com.ingenico.easypayemv.spm-networkaccess\</string\>  
-		\<string\>com.ingenico.easypayemv.spm-sppchannel\</string\>  
-	\</array\>  
+	&nbsp;\<array\>  
+		&nbsp;&nbsp;\<string>com.ingenico.easypayemv.printer\</string\>  
+		&nbsp;&nbsp;\<string\>com.ingenico.easypayemv.spm-pppchannel\</string\>  
+		&nbsp;&nbsp;\<string\>com.ingenico.easypayemv.barcodereader\</string\>  
+		&nbsp;&nbsp;\<string\>com.ingenico.easypayemv.spm-transaction\</string\>  
+		&nbsp;&nbsp;\<string\>com.ingenico.easypayemv.spm-configuration\</string\>  
+		&nbsp;&nbsp;\<string\>com.ingenico.easypayemv.spm-networkaccess\</string\>  
+		&nbsp;&nbsp;\<string\>com.ingenico.easypayemv.spm-sppchannel\</string\>  
+	&nbsp;\</array\>  
 
 ## Author
 

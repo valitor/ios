@@ -11,7 +11,19 @@ Test/ViewControllers/ActionMenu viewcontroller demonstrates how to connect to th
 
 ## Installation
 
-1. Copy all contents of Test/Library into your application. Make sure to mark 'Cope files if needed' and make sure that the files are added to your project's target.
+1. Copy all contents of Test/Library into your application. Make sure to mark 'Copy files if needed' and make sure that the files are added to your project's target.
+The files needed for the library are:
+Constants.h
+CommunicationManager.h/m
+communicationThread.h/m
+iSMP.framework
+TcpServer.h/m
+VALAmount.h/m
+Valitor.a
+VALBaseClass.h (implementation file kept hidden in Valitor.a)
+VALCard.h/m
+VALRequest.h/m
+
 
 2. Add the following to your Info.plist:  
 \<key\>UISupportedExternalAccessoryProtocols\</key\>  
@@ -27,7 +39,9 @@ Test/ViewControllers/ActionMenu viewcontroller demonstrates how to connect to th
 
 3. Make sure that the iSMP framework provided in Test/Library is added to the 'Link Binary With Libraries' in your target's Build Phases tab
 
-4. Add the following system frameworks to your project:
+4. Make sure that the Valitor.a library file provided in Test/Library is added to the 'Link Binary With Libraries' in your target's Build Phases tab
+
+5. Add the following system frameworks to your project:
 SystemConfiguration.framework,
 Foundation.framework,
 UIKit.framework,
@@ -35,7 +49,16 @@ CFNetwork.framework,
 ExternalAccessory.framework,
 CoreGraphics.framework
 
-5. Your 'Link Binary With Libraries' section should look something like this:
+6. Your 'Link Binary With Libraries' section should look something like this:
+![Alt text](http://i.imgur.com/ZM6K6Pt.png "Optional title attribute")
+
+7. Add
+
+-ObjC
+-all_load
+
+to Target -> Build Settings -> Linking -> Other Linker Flags
+
 ![Alt text](http://i.imgur.com/ZM6K6Pt.png "Optional title attribute")
 
 

@@ -1,6 +1,6 @@
 ## Introduction
 
-This is the GitHub repo for the Valitor Posi Tengdur iOS library. This repo contains a library to communicate with Valitor configured Ingenico applications, along with an example app that demonstrates the usage of the library.
+This is the GitHub repo for the Valitor Posi Tengdur iOS library. This repo contains a library to communicate with Valitor configured Ingenico POS devices, along with an example app that demonstrates the usage of the library.
 
 The example project is the Test.xcodeproj while the library itself can be found under Test/Library
 

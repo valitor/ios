@@ -74,7 +74,7 @@ Complete!
 
 ## Quick Start Guide (In the context of the example app)
 
-#Posi Tengdur
+###Posi Tengdur
 
 The CompanionSelectorViewController displays a table of all bluetooth paired POS devices. In the delegate method didSelectRowAtIndexPath you specify which POS device you actually want to communicate with. Selecting a specific POS device out of the paired devices list is not required, but is heavily recommended. If you don't specify a POS device to communicate with, the Ingenico library will choose a random POS device out of all paired devices to communicate with.
 

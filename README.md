@@ -50,13 +50,13 @@ VALRequest.h/m
 
 4. Make sure that the Valitor.a library file provided in Test/Library is added to the 'Link Binary With Libraries' in your target's Build Phases tab
 
-5. Add the following system frameworks to your project:
-SystemConfiguration.framework,
-Foundation.framework,
-UIKit.framework,
-CFNetwork.framework,
-ExternalAccessory.framework,
-CoreGraphics.framework
+5. Add the following system frameworks to your project:  
+SystemConfiguration.framework,  
+Foundation.framework,  
+UIKit.framework,  
+CFNetwork.framework,  
+ExternalAccessory.framework,  
+CoreGraphics.framework  
 
 6. Your 'Link Binary With Libraries' section should look something like this:
 ![Alt text](http://i.imgur.com/ZM6K6Pt.png "Optional title attribute")
@@ -71,6 +71,10 @@ to Target -> Build Settings -> Linking -> Other Linker Flags
 ![Alt text](http://i.imgur.com/ew0bGft.png "Optional title attribute")
 
 Complete!
+
+## Getting Started
+
+Check out the code in the example project on how to use the CommunicationManager to communicate with the POS device. The headerfile of the CommunicationManager is also documented
 
 ## Author
 

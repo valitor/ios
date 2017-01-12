@@ -115,7 +115,7 @@ Before you send a transaction to the POS device, try sending a PING message firs
 
 You can also set up the TCP connection before each transaction, and tearing the connection down after each transaction. This pattern could come in handy when the POS device is not in close proximity with the iOS devie at all times, but might be an overkill if the iOS and POS are side by side at all times.
 
-An example of the string messages sent back and forth between iOS and the POS can be found under Test/Library/VALResponses
+An example of the string messages sent back and forth between iOS and the POS can be found under Test/Library/VALResponses.
 
 
 Barcode reader:

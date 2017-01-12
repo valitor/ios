@@ -84,12 +84,14 @@ The usual workflow used in the ActionMenu to send messages to the POS device is:
 2. Select an action from the dropdown list by pressing the 'Ýttu til að velja posa aðgerð' button. What you select in this list will determine what actions you send to the POS device.
 3. After 'Senda til Posa' button is pressed, the example application will try to send an NSString over TCP to the POS device. One thing to note here is that there is both a timeout on the iOS side and the POS side. This timeout is 180 seconds by default for all messages except the PING message, which has a 5 second timeout. This value can be overwritten on the iOS side (the PING timeout can not be overwritten) but is not recommended. Simple example of the timeout:
 
-Timout (iOS side)  
+Timout (iOS side)
+
 3.1. iOS sends message to POS, adds request to processing queue   
 3.2. POS doesn't respond within timeout  
 3.3 The request is removed from the request processing queue due to timeout  
 
 Timeout (POS side)    
+
 3.4 POS receives message from iOS  
 3.5 POS sends response message to iOS  
 3.6 No confirmation of message delivered from the iOS application  

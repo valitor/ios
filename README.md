@@ -74,7 +74,7 @@ Complete!
 
 ## Quick Start Guide (In the context of the example app)
 
-###Posi Tengdur
+Communicating with the POSI Tengdur application that runs on the POS Device:
 
 The CompanionSelectorViewController displays a table of all bluetooth paired POS devices. In the delegate method didSelectRowAtIndexPath you specify which POS device you actually want to communicate with. Selecting a specific POS device out of the paired devices list is not required, but is heavily recommended. If you don't specify a POS device to communicate with, the Ingenico library will choose a random POS device out of all paired devices to communicate with.
 
@@ -116,8 +116,29 @@ Before you send a transaction to the POS device, try sending a PING message firs
 You can also set up the TCP connection before each transaction, and tearing the connection down after each transaction. This pattern could come in handy when the POS device is not in close proximity with the iOS devie at all times, but might be an overkill if the iOS and POS are side by side at all times.
 
 
+Barcode reader:
+The barcode reader is not a part of the ValitorPosiTengdur application that is running on the POS devices. Instead it communicates directly with the OS on the POS device. This means that you only need to pair the POS device and the iOS device in the settings app and DON'T need to establish TCP communications to use the barcode scanner. See methods scanOnPressed and scanOffPressed in ActionMenu.m on how to start/stop the barcode scanner. It's recommended by Ingenico to call [[CommunicationManager manager] stopScan]] when your application enters background, and therefore code is in place in the AppDelegate to take care of that. I recommend that you do the same in your business application.
 
+The CommunicationManager uses the delegate pattern to notify when the scanner has scanned data. See methods:
 
+-(void)didReceiveScanData:(NSString *)data  (ActionMenu.m)
+
+-(void)barcodeData:(id)data ofType:(int)type (CommunicationManager.m)
+
+When you try to start the barcode scanner, three things can happen:
+- Success
+- Fail due to synchronization problems
+- Denided due to POS device not being able to start scan, for example if it doesn't have enough power.
+
+A known issue is that the first time you try to start the scanner it will not succeed due to FAIL, but sending another startScan message should start the scanner.
+
+The barcode reader can be configured for all kinds of symbols, see methods 
+
+-(void)configureScannerForAllSymbols  
+
+-(void)configureScannerForCustomSymbols  
+
+for example on how to configure the scanner.
 
 
 ## Author

@@ -86,16 +86,16 @@ The usual workflow used in the ActionMenu to send messages to the POS device is:
 
 Timout (iOS side)
 
-1. iOS sends message to POS, adds request to processing queue   
-2. POS doesn't respond within timeout  
-3 The request is removed from the request processing queue due to timeout  
+- iOS sends message to POS, adds request to processing queue   
+- POS doesn't respond within timeout  
+- The request is removed from the request processing queue due to timeout  
 
 Timeout (POS side)    
 
-1 POS receives message from iOS  
-2. POS sends response message to iOS  
-3. No confirmation of message delivered from the iOS application  
-4. Timeout on POS side, terminates the action and voids the transaction.  
+- POS receives message from iOS  
+- POS sends response message to iOS  
+- No confirmation of message delivered from the iOS application  
+- Timeout on POS side, terminates the action and voids the transaction.  
 
 The request processing queue of the communication manager is a FIFO system. If for some reasons your requests aren't being processed (for example if the TCP connection drops) your request queue might get clogged if you continue to send message requests before you get responses back. You can flush the requests processing queue with the  
   

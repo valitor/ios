@@ -86,18 +86,18 @@ The usual workflow used in the ActionMenu to send messages to the POS device is:
 
 Timout (iOS side)
 
-3.1. iOS sends message to POS, adds request to processing queue   
-3.2. POS doesn't respond within timeout  
-3.3 The request is removed from the request processing queue due to timeout  
+1. iOS sends message to POS, adds request to processing queue   
+2. POS doesn't respond within timeout  
+3 The request is removed from the request processing queue due to timeout  
 
 Timeout (POS side)    
 
-3.4 POS receives message from iOS  
-3.5 POS sends response message to iOS  
-3.6 No confirmation of message delivered from the iOS application  
-3.7 Timeout on POS side, terminates the action and voids the transaction.  
+1 POS receives message from iOS  
+2. POS sends response message to iOS  
+3. No confirmation of message delivered from the iOS application  
+4. Timeout on POS side, terminates the action and voids the transaction.  
 
-4. The request processing queue of the communication manager is a FIFO system. If for some reasons your requests aren't being processed (for example if the TCP connection drops) your request queue might get clogged if you continue to send message requests before you get responses back. You can flush the requests processing queue with the  
+The request processing queue of the communication manager is a FIFO system. If for some reasons your requests aren't being processed (for example if the TCP connection drops) your request queue might get clogged if you continue to send message requests before you get responses back. You can flush the requests processing queue with the  
   
 -(void)emptyRequestQueue  
 
@@ -106,9 +106,9 @@ or remove certain requests from the queue by
 -(void)removeRequestFromQueue:(VALRequest *)requestToRemove    
 
 
-5. A known problem with POS devices running bluetooth applications is that the network connectivity managers on the POS devices are bad, meaning that they often don't detect a connection drop. This can lead to connectivity problems and incorrect states in applications trying to communicate with the POS devices. Although there is no perfect method to prevent this, there are remedies. 
+A known problem with POS devices running bluetooth applications is that the network connectivity managers on the POS devices are bad, meaning that they often don't detect a connection drop. This can lead to connectivity problems and incorrect states in applications trying to communicate with the POS devices. Although there is no perfect method to prevent this, there are remedies. 
 
-5.1: Before you send a transaction to the POS device, try sending a PING message first. If the PING message prevails, send the authorization request in the successblock of the PING message. By doing so you confirm that you have a connection to the POS device (since it responds to PING) and you can be relatively sure that your transaction request is actually sent to the POS device. An example of this usage pattern can be found in the method  
+Before you send a transaction to the POS device, try sending a PING message first. If the PING message prevails, send the authorization request in the successblock of the PING message. By doing so you confirm that you have a connection to the POS device (since it responds to PING) and you can be relatively sure that your transaction request is actually sent to the POS device. An example of this usage pattern can be found in the method  
 -(void)sendAuthWithPing in ActionMenu.m  
 5.2: Setting up the TCP connection before each transaction, and tearing the connection down after each transaction. This pattern could come in handy when the POS device is not in close proximity with the iOS devie at all times, but might be an overkill if the iOS and POS are side by side at all times.
 

@@ -115,6 +115,8 @@ Before you send a transaction to the POS device, try sending a PING message firs
 
 You can also set up the TCP connection before each transaction, and tearing the connection down after each transaction. This pattern could come in handy when the POS device is not in close proximity with the iOS devie at all times, but might be an overkill if the iOS and POS are side by side at all times.
 
+An example of the string messages sent back and forth between iOS and the POS can be found under Test/Library/VALResponses
+
 
 Barcode reader:
 The barcode reader is not a part of the ValitorPosiTengdur application that is running on the POS devices. Instead it communicates directly with the OS on the POS device. This means that you only need to pair the POS device and the iOS device in the settings app and DON'T need to establish TCP communications to use the barcode scanner. See methods scanOnPressed and scanOffPressed in ActionMenu.m on how to start/stop the barcode scanner. It's recommended by Ingenico to call [[CommunicationManager manager] stopScan]] when your application enters background, and therefore code is in place in the AppDelegate to take care of that. I recommend that you do the same in your business application.

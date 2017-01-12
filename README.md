@@ -107,15 +107,20 @@ or remove certain requests from the queue by
 
 -(void)removeRequestFromQueue:(VALRequest *)requestToRemove    
 
+Note: An example of the string messages sent back and forth between iOS and the POS can be found under Test/Library/VALResponses.
+
 
 A known problem with POS devices running bluetooth applications is that the network connectivity managers on the POS devices are bad, meaning that they often don't detect a connection drop. This can lead to connectivity problems and incorrect states in applications trying to communicate with the POS devices. Although there is no perfect method to prevent this, there are remedies. 
 
-Before you send a transaction to the POS device, try sending a PING message first. If the PING message prevails, send the authorization request in the successblock of the PING message. By doing so you confirm that you have a connection to the POS device (since it responds to PING) and you can be relatively sure that your transaction request is actually sent to the POS device. An example of this usage pattern can be found in the method  
+- Before you send a transaction to the POS device, try sending a PING message first. If the PING message prevails, send the authorization request in the successblock of the PING message. By doing so you confirm that you have a connection to the POS device (since it responds to PING) and you can be relatively sure that your transaction request is actually sent to the POS device. An example of this usage pattern can be found in the method  
 -(void)sendAuthWithPing in ActionMenu.m  
 
-You can also set up the TCP connection before each transaction, and tearing the connection down after each transaction. This pattern could come in handy when the POS device is not in close proximity with the iOS devie at all times, but might be an overkill if the iOS and POS are side by side at all times.
+- You can also set up the TCP connection before each transaction, and tearing the connection down after each transaction. This pattern could come in handy when the POS device is not in close proximity with the iOS device at all times, but might be an overkill if the iOS and POS are side by side at all times.
 
-An example of the string messages sent back and forth between iOS and the POS can be found under Test/Library/VALResponses.
+- When the application enters background, iOS tears down the TCP connection. To handle this gracefully we disconnect the TCP bridge in AppDelegate:
+
+- (void)applicationWillResignActive:(UIApplication *)application
+  
 
 
 Barcode reader:

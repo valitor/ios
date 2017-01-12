@@ -74,6 +74,8 @@ Complete!
 
 ## Quick Start Guide (In the context of the example app)
 
+#Posi Tengdur
+
 The CompanionSelectorViewController displays a table of all bluetooth paired POS devices. In the delegate method didSelectRowAtIndexPath you specify which POS device you actually want to communicate with. Selecting a specific POS device out of the paired devices list is not required, but is heavily recommended. If you don't specify a POS device to communicate with, the Ingenico library will choose a random POS device out of all paired devices to communicate with.
 
 The ActionMenu ViewController is meant as a simple example to start TCP communication with a POS device. The action that can be sent to the POS device are all the available methods in the Posi Tengdur application that is running on the POS device.
@@ -110,7 +112,10 @@ A known problem with POS devices running bluetooth applications is that the netw
 
 Before you send a transaction to the POS device, try sending a PING message first. If the PING message prevails, send the authorization request in the successblock of the PING message. By doing so you confirm that you have a connection to the POS device (since it responds to PING) and you can be relatively sure that your transaction request is actually sent to the POS device. An example of this usage pattern can be found in the method  
 -(void)sendAuthWithPing in ActionMenu.m  
-5.2: Setting up the TCP connection before each transaction, and tearing the connection down after each transaction. This pattern could come in handy when the POS device is not in close proximity with the iOS devie at all times, but might be an overkill if the iOS and POS are side by side at all times.
+
+You can also set up the TCP connection before each transaction, and tearing the connection down after each transaction. This pattern could come in handy when the POS device is not in close proximity with the iOS devie at all times, but might be an overkill if the iOS and POS are side by side at all times.
+
+
 
 
 

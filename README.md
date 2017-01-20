@@ -123,7 +123,7 @@ A known problem with POS devices running bluetooth applications is that the netw
   
 
 
-Barcode reader:
+## Barcode Reader:
 The barcode reader is not a part of the ValitorPosiTengdur application that is running on the POS devices. Instead it communicates directly with the OS on the POS device. This means that you only need to pair the POS device and the iOS device in the settings app and DON'T need to establish TCP communications to use the barcode scanner. See methods scanOnPressed and scanOffPressed in ActionMenu.m on how to start/stop the barcode scanner. It's recommended by Ingenico to call [[CommunicationManager manager] stopScan]] when your application enters background, and therefore code is in place in the AppDelegate to take care of that. I recommend that you do the same in your business application.
 
 When a user selects a device to communicate with in CompanionSelectorViewController.m (didSelectRowAtIndexPath), the communication manager clears the memory reference to the barcode scanner before setting the wanted device on the barcode communication channel. This is done to clear out any possible previous connection to another barcode scanner. Specifying a wanted device for the [ICBarCodeReader sharedICBarCodeReader] without clearing the memory reference to [ICBarCodeReader sharedICBarCodeReader] doesn't seem to work and is most likely a bug in the Ingenico library itself, hence we clear the memory reference before setting the wanted device.

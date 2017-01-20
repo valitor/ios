@@ -128,7 +128,7 @@ The barcode reader is not a part of the ValitorPosiTengdur application that is r
 
 When a user selects a device to communicate with in CompanionSelectorViewController.m (didSelectRowAtIndexPath), the communication manager clears the memory reference to the barcode scanner before setting the wanted device on the barcode communication channel. This is done to clear out any possible previous connection to another barcode scanner. Specifying a wanted device for the [ICBarCodeReader sharedICBarCodeReader] without clearing the memory reference to [ICBarCodeReader sharedICBarCodeReader] doesn't seem to work and is most likely a bug in the Ingenico library itself, hence we clear the memory reference before setting the wanted device.
 
-Note: You can setup a TCP+BT connection and then start the barcode scanner OR you can start the scanner and then start TCP+BT connectivity. The order does not matter.
+Note: You can setup a TCP+BT connection and then start the barcode scanner OR you can start the scanner and then start TCP+BT connectivity. The order does not matter. However, memory reference to the barcode reader must be cleared when TCP+BT connections are teared down in order to be able to start TCP+BT communications again. This is most likely due to a bug in the Ingenico library.
 
 The CommunicationManager uses the delegate pattern to notify when the scanner has scanned data. See methods:
 

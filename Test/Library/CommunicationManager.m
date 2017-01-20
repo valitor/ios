@@ -166,8 +166,10 @@
     
     //Clear the memory reference to the channels
     
-    self.pppChannel = nil;
-    self.configurationChannel = nil;
+    //Clear the memoryt reference to the scanner
+    //In order to be able to switch between POS scanners
+    //Since the barcodereader operates on a different
+    //Communication channel than the TCP/BT connection
     self.barcodeReader = nil;
 
     //Setup the channels again
@@ -255,6 +257,16 @@
 }
 
 -(void)setupChannels{
+    
+    //Barcode not set to nil here
+    //Because i want to be able to
+    //start / stop the TCP connection in the example app
+    //without tearing down the scanner connection
+    //This is because the scanner operates on the a different communication channel
+    //than TCP/BT
+    self.pppChannel = nil;
+    self.configurationChannel = nil;
+
     
     _pppChannel = [ICPPP sharedChannel];
     _pppChannel.delegate = self;

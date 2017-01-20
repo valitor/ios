@@ -78,13 +78,13 @@ Communicating with the POSI Tengdur application that runs on the POS Device:
 
 The CompanionSelectorViewController displays a table of all bluetooth paired POS devices. In the delegate method didSelectRowAtIndexPath you specify which POS device you actually want to communicate with. Selecting a specific POS device out of the paired devices list is not required, but is heavily recommended. If you don't specify a POS device to communicate with, the Ingenico library will choose a random POS device out of all paired devices to communicate with.
 
-The ActionMenu ViewController is meant as a simple example to start TCP communication with a POS device. The action that can be sent to the POS device are all the available methods in the Posi Tengdur application that is running on the POS device.
+The ActionMenu ViewController is meant as a simple example to start TCP communication with a POS device, along with barcode scanner start/stop functionality. The action that can be sent to the POS device are all the available methods in the Posi Tengdur application that is running on the POS device, along with starting/stopping the barcode scanner.
 
 The usual workflow used in the ActionMenu to send messages to the POS device is:
 
 1. Start TCP over bluetooth by pressing the 'Kveikja á TCP og BT' button, which executes the method startBTAndTCP. This will establish TCP bridge between the iOS and the POS device and able you to send NSString messages to the ValitorPosiTengdur application that is running on the POS device.
 2. Select an action from the dropdown list by pressing the 'Ýttu til að velja posa aðgerð' button. What you select in this list will determine what actions you send to the POS device.
-3. After 'Senda til Posa' button is pressed, the example application will try to send an NSString over TCP to the POS device. One thing to note here is that there is both a timeout on the iOS side and the POS side. This timeout is 180 seconds by default for all messages except the PING message, which has a 5 second timeout. This value can be overwritten on the iOS side (the PING timeout can not be overwritten) but is not recommended. Simple example of the timeout:
+3. After 'Senda til Posa' button is pressed, the example application will try to send an NSString over TCP to the POS device. One thing to note here is that there is both a timeout on the iOS side and the POS side. This timeout is 180 seconds by default for all messages except the PING message, which has a 5 second timeout. This value can be overwritten on the iOS side but is not recommended. Simple example of the timeout:
 
 Timout (iOS side)
 
@@ -126,6 +126,10 @@ A known problem with POS devices running bluetooth applications is that the netw
 Barcode reader:
 The barcode reader is not a part of the ValitorPosiTengdur application that is running on the POS devices. Instead it communicates directly with the OS on the POS device. This means that you only need to pair the POS device and the iOS device in the settings app and DON'T need to establish TCP communications to use the barcode scanner. See methods scanOnPressed and scanOffPressed in ActionMenu.m on how to start/stop the barcode scanner. It's recommended by Ingenico to call [[CommunicationManager manager] stopScan]] when your application enters background, and therefore code is in place in the AppDelegate to take care of that. I recommend that you do the same in your business application.
 
+When a user selects a device to communicate with in CompanionSelectorViewController.m (didSelectRowAtIndexPath), the communication manager clears the memory reference to the barcode scanner before setting the wanted device on the barcode communication channel. This is done to clear out any possible previous connection to another barcode scanner. Specifying a wanted device for the [ICBarCodeReader sharedICBarCodeReader] without clearing the memory reference to [ICBarCodeReader sharedICBarCodeReader] doesn't seem to work and is most likely a bug in the Ingenico library itself, hence we clear the memory reference before setting the wanted device.
+
+Note: You can setup a TCP+BT connection and then start the barcode scanner OR you can start the scanner and then start TCP+BT connectivity. The order does not matter.
+
 The CommunicationManager uses the delegate pattern to notify when the scanner has scanned data. See methods:
 
 -(void)didReceiveScanData:(NSString *)data  (ActionMenu.m)
@@ -135,9 +139,9 @@ The CommunicationManager uses the delegate pattern to notify when the scanner ha
 When you try to start the barcode scanner, three things can happen:
 - Success
 - Fail due to synchronization problems
-- Denided due to POS device not being able to start scan, for example if it doesn't have enough power.
+- Denided due to POS device not being able to start scan, for example if it doesn't have enough power or an electric cord is plugged in which can lead to scan start failure.
 
-A known issue is that the first time you try to start the scanner it will not succeed due to FAIL, but sending another startScan message should start the scanner.
+Sometimes the ScanOn functionality fails in the first try, but usually works during in the second try.
 
 The barcode reader can be configured for all kinds of symbols, see methods 
 

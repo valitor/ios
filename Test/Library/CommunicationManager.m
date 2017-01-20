@@ -70,6 +70,11 @@
 
 }
 
+-(void)accessoryDidDisconnect:(ICISMPDevice *)sender {
+    
+    NSLog(@"AccesoryDidDisconnect");
+}
+
 -(void)shouldOpenTCPConnectionOnAppResume:(BOOL)shouldOpen{
     
     self.shouldReconnectOnAppResume = shouldOpen;
@@ -104,6 +109,11 @@
 
 -(void)startScan{
     
+    //You can use
+    //[ICISMPDevice isAvailable]
+    //To check if there is an ICISMPDevice available
+    //To start the scanner
+    
     if([self.barcodeReader powerOn] == ICBarCodeReader_PowerOnSuccess){
         
         /**< The powerOn command was successful */
@@ -131,10 +141,7 @@
     NSLog(@"Scanner stopped");
 }
 
--(void)accessoryDidDisconnect:(ICISMPDevice *)sender {
 
-    
-}
 
 -(void)barcodeData:(id)data ofType:(int)type {
     

@@ -75,9 +75,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    
     _selectedCompanion = _arrCompanions[indexPath.row];
     _lblSelectedPos.text = [NSString stringWithFormat:@"Selected POS: %@", _selectedCompanion];
-    [ICISMPDevice setWantedDevice:_selectedCompanion];
+    
+    [[CommunicationManager manager] setWantedDevice:_selectedCompanion];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

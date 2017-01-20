@@ -58,7 +58,6 @@
         manager.barcodeReader = [ICBarCodeReader sharedICBarCodeReader];
         manager.barcodeReader.delegate = manager;
         manager.barcodeReader.iscpRetryCount = 100;
-        manager.device.delegate = manager;
         manager.shouldReconnectOnAppResume = NO;
     });
     return manager;
@@ -163,6 +162,30 @@
     return [ICISMPDevice getConnectedTerminals];
 }
 
+-(void)setWantedDevice:(NSString *)device{
+    
+    //Clear the memory reference to the channels
+    
+    self.pppChannel = nil;
+    self.configurationChannel = nil;
+    self.barcodeReader = nil;
+
+    //Setup the channels again
+    [self setupChannels];
+    
+    //Specify which device you want to communicate with on the channels
+    [ICPPP setWantedDevice:device];
+    [ICISMPDevice setWantedDevice:device];
+    [ICAdministration setWantedDevice:device];
+    [ICBarCodeReader setWantedDevice:device];
+
+    
+    NSLog(@"ICPP Wanted Device After: %@", [ICPPP getWantedDevice]);
+    NSLog(@"ICISMPD Device After: %@", [ICISMPDevice getWantedDevice]);
+    NSLog(@"ICAdministration Device After: %@", [ICAdministration getWantedDevice]);
+    NSLog(@"ICBarCodeReader: %@ After", [ICBarCodeReader getWantedDevice]);
+}
+
 #pragma mark - TCP Start / Stop
 -(void)startTcpServer {
     NSLog(@"%s", __FUNCTION__);
@@ -237,6 +260,8 @@
     _pppChannel.delegate = self;
     _configurationChannel = [ICAdministration sharedChannel];
     _configurationChannel.delegate = self;
+    _barcodeReader = [ICBarCodeReader sharedICBarCodeReader];
+    _barcodeReader.delegate = self;
 }
 
 -(void)closeChannels{

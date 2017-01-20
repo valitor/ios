@@ -72,6 +72,9 @@ typedef enum : NSUInteger{
 //Returns an array of paired bluetooth POS devices.
 -(NSArray *)getConnectedTerminals;
 
+//Sets the wanted device on every communication channel
+-(void)setWantedDevice:(NSString *)device;
+
 #pragma mark - RequestQueue manipulation
 //Empties the requestQueue, by removing all objects from the _arrRequests array. This method could come in handy if, for some reason, you need to clear pending requests to the POS device.
 -(void)emptyRequestQueue;

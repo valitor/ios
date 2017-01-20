@@ -37,6 +37,7 @@
 @property (nonatomic) double scanTimeAverage;
 @property (nonatomic) long long barcodeCount;
 @property (nonatomic) BOOL gotFirstScan;
+@property (nonatomic, strong) NSString *selectedCompanion;
 @end
 
 @implementation CommunicationManager
@@ -108,11 +109,17 @@
 }
 
 -(void)startScan{
+
     
-    //You can use
-    //[ICISMPDevice isAvailable]
-    //To check if there is an ICISMPDevice available
-    //To start the scanner
+    //Situations can arise in the example
+    //app where we have teared down the BT+TCP connection
+    //and also teared down the memory reference
+    //to the scanner. When that happens
+    //We need to make sure that the barcode reader has a wanted
+    //device and therefore we set the wanted device here
+    [self setWantedDeviceToSelectedCompanion];
+    _barcodeReader = [ICBarCodeReader sharedICBarCodeReader];
+    _barcodeReader.delegate = self;
     
     if([self.barcodeReader powerOn] == ICBarCodeReader_PowerOnSuccess){
         
@@ -169,31 +176,7 @@
     return [ICISMPDevice getConnectedTerminals];
 }
 
--(void)setWantedDevice:(NSString *)device{
-    
-    //Clear the memory reference to the channels
-    
-    //Clear the memoryt reference to the scanner
-    //In order to be able to switch between POS scanners
-    //Since the barcodereader operates on a different
-    //Communication channel than the TCP/BT connection
-    self.barcodeReader = nil;
 
-    //Setup the channels again
-    [self setupChannels];
-    
-    //Specify which device you want to communicate with on the channels
-    [ICPPP setWantedDevice:device];
-    [ICISMPDevice setWantedDevice:device];
-    [ICAdministration setWantedDevice:device];
-    [ICBarCodeReader setWantedDevice:device];
-
-    
-    NSLog(@"ICPP Wanted Device After: %@", [ICPPP getWantedDevice]);
-    NSLog(@"ICISMPD Device After: %@", [ICISMPDevice getWantedDevice]);
-    NSLog(@"ICAdministration Device After: %@", [ICAdministration getWantedDevice]);
-    NSLog(@"ICBarCodeReader: %@ After", [ICBarCodeReader getWantedDevice]);
-}
 
 #pragma mark - TCP Start / Stop
 -(void)startTcpServer {
@@ -263,14 +246,41 @@
     
 }
 
+-(void)setWantedDeviceToSelectedCompanion{
+    
+    [ICPPP setWantedDevice:_selectedCompanion];
+    [ICISMPDevice setWantedDevice:_selectedCompanion];
+    [ICAdministration setWantedDevice:_selectedCompanion];
+    [ICBarCodeReader setWantedDevice:_selectedCompanion];
+}
+
+-(void)setWantedDevice:(NSString *)device{
+
+    self.barcodeReader = nil;
+    //Setup the channels again
+    [self setupChannels];
+    
+    //Specify which device you want to communicate with on the channels
+    [ICPPP setWantedDevice:device];
+    [ICISMPDevice setWantedDevice:device];
+    [ICAdministration setWantedDevice:device];
+    [ICBarCodeReader setWantedDevice:device];
+    
+    
+//    [ICPPP setWantedDevice:_selectedCompanion];
+//    [ICISMPDevice setWantedDevice:_selectedCompanion];
+//    [ICAdministration setWantedDevice:_selectedCompanion];
+//    [ICBarCodeReader setWantedDevice:_selectedCompanion];
+    
+    
+    NSLog(@"ICPP Wanted Device After: %@", [ICPPP getWantedDevice]);
+    NSLog(@"ICISMPD Device After: %@", [ICISMPDevice getWantedDevice]);
+    NSLog(@"ICAdministration Device After: %@", [ICAdministration getWantedDevice]);
+    NSLog(@"ICBarCodeReader: %@ After", [ICBarCodeReader getWantedDevice]);
+}
+
 -(void)setupChannels{
     
-    //Barcode not set to nil here
-    //Because i want to be able to
-    //start / stop the TCP connection in the example app
-    //without tearing down the scanner connection
-    //This is because the scanner operates on the a different communication channel
-    //than TCP/BT
     self.pppChannel = nil;
     self.configurationChannel = nil;
 
@@ -287,6 +297,13 @@
     
     [_pppChannel closeChannel];
     [_configurationChannel close];
+    
+    //If the memory reference to the
+    //barcodereader is not cleared
+    //when TCP/BT communications are teared down
+    //Reconnection of the TCP/BT connection will
+    //not work, most likely due to a bug in the ingenico library
+    self.barcodeReader = nil;
     
     //Stop TCP Servers
     [self stopTcpServer];

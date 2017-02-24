@@ -157,6 +157,7 @@
         
         NSString *strData = data;
         NSLog(@"ScannedData: %@", strData);
+        [_arrConsoleMsgs addObject:strData];
         if([self.delegate respondsToSelector:@selector(didReceiveScanData:)]){
             [self.delegate didReceiveScanData:strData];
         }

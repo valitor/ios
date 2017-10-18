@@ -68,6 +68,12 @@ CoreGraphics.framework
 
 to Target -> Build Settings -> Linking -> Other Linker Flags
 
+8. Navigate to Target -> Build Phases -> Compile sources and add
+
+-fno-objc-arc
+
+compiler flag to TcpServer.m and communicationThread.m, as these classes are not ARC compliant.
+
 ![Alt text](http://i.imgur.com/ew0bGft.png "Optional title attribute")
 
 Complete!
